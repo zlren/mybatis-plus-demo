@@ -19,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("")
-    public User getAllUser() {
+    public String getAllUser() {
         // EntityWrapper<User> ew = new EntityWrapper<>();
         // ew.between("age", 1, 2);
         // ew.orderBy("age");
@@ -27,9 +27,10 @@ public class UserController {
         // ew.lt("", "");
         // return userService.selectList(ew);
 
-        User user = new User().setName("zlren").setTenantId(9L);
+        User user = new User();
+        user.setUsername("zlren");
         userService.insert(user);
 
-        return userService.selectUserSQL();
+        return "hello";
     }
 }

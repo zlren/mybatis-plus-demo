@@ -13,8 +13,4 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService extends ServiceImpl<UserMapper, User> {
-
-    public User selectUserSQL() {
-        return baseMapper.selectUserSQL();
-    }
 }
