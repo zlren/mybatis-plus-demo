@@ -1,6 +1,6 @@
 package lab.zlren.mp.mapper;
 
-import lab.zlren.mp.entity.User;
+import lab.zlren.mp.entity.AbilityInvokeLog;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @author zlren
  * @since 2018-04-05
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface AbilityInvokeLogMapper extends BaseMapper<AbilityInvokeLog> {
 
 }

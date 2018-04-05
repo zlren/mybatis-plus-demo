@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2017-11-12
  */
 @SpringBootApplication
-public class MybatisPlusDemoApplication {
+public class MybatisPlusDemoApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(MybatisPlusDemoApplication.class, args);
+        SpringApplication.run(MybatisPlusDemoApp.class, args);
     }
 }

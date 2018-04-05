@@ -15,6 +15,15 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  */
 public class MyGenerator {
 
+    private static final String URL = "jdbc:mysql://10.109.246.35:3306/aiop?characterEncoding=utf8";
+    private static final String PASSWORD = "Bupt2017~";
+    private static final String USERNAME = "root";
+    /**
+     * GROUP_ID.ARTIFACT_ID.entity 下会生成bean
+     */
+    private static final String GROUP_ID = "lab.zlren";
+    private static final String ARTIFACT_ID = "mp";
+
     public static void main(String[] args) {
 
         AutoGenerator mpg = new AutoGenerator();
@@ -23,10 +32,14 @@ public class MyGenerator {
         GlobalConfig gc = new GlobalConfig();
         gc.setOutputDir("/Users/zlren/Documents/work_space/mybatis-plus-demo/src/main/java");
         gc.setFileOverride(true);
-        gc.setActiveRecord(false);// 不需要ActiveRecord特性的请改为false
-        gc.setEnableCache(false);// XML 二级缓存
-        gc.setBaseResultMap(false);// XML ResultMap
-        gc.setBaseColumnList(false);// XML columList
+        // 不需要ActiveRecord特性的请改为false
+        gc.setActiveRecord(false);
+        // XML 二级缓存
+        gc.setEnableCache(false);
+        // XML ResultMap
+        gc.setBaseResultMap(false);
+        // XML columList
+        gc.setBaseColumnList(false);
         // .setKotlin(true) 是否生成 kotlin 代码
         gc.setAuthor("zlren");
 
@@ -52,16 +65,18 @@ public class MyGenerator {
         });
 
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("Lab2016!");
-        dsc.setUrl("jdbc:mysql://10.109.246.35:3306/zlren?characterEncoding=utf8");
+        dsc.setUsername(USERNAME);
+        dsc.setPassword(PASSWORD);
+        dsc.setUrl(URL);
         mpg.setDataSource(dsc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
-        strategy.setTablePrefix(new String[]{});// 此处可以修改为您的表前缀
-        strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
+        // 此处可以修改为您的表前缀
+        strategy.setTablePrefix(new String[]{});
+        // 表名生成策略
+        strategy.setNaming(NamingStrategy.underline_to_camel);
         // strategy.setInclude(new String[] { "user" }); // 需要生成的表
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
         // 自定义实体父类
@@ -86,8 +101,8 @@ public class MyGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("lab.zlren");
-        pc.setModuleName("mp");
+        pc.setParent(GROUP_ID);
+        pc.setModuleName(ARTIFACT_ID);
         mpg.setPackageInfo(pc);
 
         // // 注入自定义配置，可以在 VM 中使用 cfg.abc 【可无】
